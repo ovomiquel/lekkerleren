@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tafels</title>
+    <style>
+        input {
+            width: 20px;
+        }
+
+        .clock {
+            border-radius: 50%;
+            background: #fff url(./images/klok.png) no-repeat center;
+            background-size: 100%;
+            height: 200px;
+            padding-bottom: 31%;
+            position: absolute;
+            width: 200px;
+            margin-left: 34%;
+        }
+
+        .clock.simple:after {
+            background: #000;
+            border-radius: 50%;
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 5%;
+            height: 5%;
+            z-index: 10;
+        }
+
+        .minutes-container, .hours-container, .seconds-container {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+        .seconds {
+            background: #000;
+            height: 13%;
+            left: 48.75%;
+            position: absolute;
+            top: 37%;
+            transform-origin: 50% 100%;
+            width: 1.5%;
+        }
+
+        @keyframes rotate {
+            100% {
+                transform: rotateZ(360deg);
+            }
+        }
+
+        .seconds-container {
+            animation: rotate 60s infinite linear;
+        }
+
+    </style>
+</head>
+<body>
+
+<script>
+    var cijfer = 10;
+    var fouten = 0;
+    var a = Math.floor(Math.random() * 10) + 1;
+    var b = Math.floor(Math.random() * 10) + 1;
+    var c = Math.floor(Math.random() * 10) + 1;
+    var d = Math.floor(Math.random() * 10) + 1;
+    var e = Math.floor(Math.random() * 10) + 1;
+    var f = Math.floor(Math.random() * 10) + 1;
+    var g = Math.floor(Math.random() * 10) + 1;
+    var h = Math.floor(Math.random() * 10) + 1;
+    var i = Math.floor(Math.random() * 10) + 1;
+    var j = Math.floor(Math.random() * 10) + 1;
+    var z = prompt("Welke tafel wil je toetsen?");
+    document.write(a + " x " + z + " = ");
+</script>
+<input type="text" id="1" maxlength="3">
+<script>
+    document.write("<br>" + b + " x " + z + " = ");
+</script>
+<input type="text" id="2" maxlength="3">
+<script>
+    document.write("<br>" + c + " x " + z + " = ");
+</script>
+<input type="text" id="3" maxlength="3">
+<script>
+    document.write("<br>" + d + " x " + z + " = ");
+</script>
+<input type="text" id="4" maxlength="3">
+<script>
+    document.write("<br>" + e + " x " + z + " = ");
+</script>
+<input type="text" id="5" maxlength="3">
+<script>
+    document.write("<br>" + f + " x " + z + " = ");
+</script>
+<input type="text" id="6" maxlength="3">
+<script>
+    document.write("<br>" + g + " x " + z + " = ");
+</script>
+<input type="text" id="7" maxlength="3">
+<script>
+    document.write("<br>" + h + " x " + z + " = ");
+</script>
+<input type="text" id="8" maxlength="3">
+<script>
+    document.write("<br>" + i + " x " + z + " = ");
+</script>
+<input type="text" id="9" maxlength="3">
+<script>
+    document.write("<br>" + j + " x " + z + " = ");
+</script>
+<input type="text" id="10" maxlength="3">
+
+<button onclick="setAnswer()">Klaar</button>
+<script>
+    function setAnswer() {
+        var input1 = document.getElementById("1").value;
+        if (input1 != a * z) {
+            fouten++;
+        }
+        var input2 = document.getElementById("2").value;
+        if (input2 != b * z) {
+            fouten++;
+        }
+        var input3 = document.getElementById("3").value;
+        if (input3 != c * z) {
+            fouten++;
+        }
+        var input4 = document.getElementById("4").value;
+        if (input4 != d * z) {
+            fouten++;
+        }
+        var input5 = document.getElementById("5").value;
+        if (input5 != e * z) {
+            fouten++;
+        }
+        var input6 = document.getElementById("6").value;
+        if (input6 != f * z) {
+            fouten++;
+        }
+        var input7 = document.getElementById("7").value;
+        if (input7 != g * z) {
+            fouten++;
+        }
+        var input8 = document.getElementById("8").value;
+        if (input8 != h * z) {
+            fouten++;
+        }
+        var input9 = document.getElementById("9").value;
+        if (input9 != i * z) {
+            fouten++;
+        }
+        var input10 = document.getElementById("10").value;
+        if (input10 != j * z) {
+            fouten++;
+        }
+        document.write("Je cijfer is een: " + (cijfer - fouten));
+    }
+
+
+    function tijdom() {
+        var tijdom = confirm("De tijd is om. Probeer het nog eens");
+        if (tijdom == true) {
+            window.location = "toetstest.html"
+        }
+        else {
+            window.location = "home.html"
+        }
+    }
+    setTimeout(function () {
+        tijdom("Klaar");
+    }, 60000);
+
+</script>
+<article class="clock">
+    <div class="hours-container">
+        <div class="hours"></div>
+    </div>
+    <div class="minutes-container">
+        <div class="minutes"></div>
+    </div>
+    <div class="seconds-container">
+        <div class="seconds"></div>
+    </div>
+</article>
+</body>
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>less1G</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <!-- body animation -->
+    <script>
+        // speed in milliseconds
+        var scrollSpeed = 10;
+
+        // set the default position
+        var current = 0;
+
+        // set the direction
+        var direction = 'h';
+
+        function bgscroll() {
+
+            // 1 pixel row at a time
+            current -= 1;
+
+            // move the background with backgrond-position css properties
+            $('body').css("backgroundPosition", (direction == 'h') ? current + "px 0" : "0 " + current + "px");
+
+        }
+
+        //Calls the scrolling function repeatedly
+        setInterval("bgscroll()", scrollSpeed);
+    </script>
+    <style>
+        body {
+            width: 420%;
+            background-image: url("images/background.jpg");
+            overflow: scroll;
+
+        }
+
+        #id {
+            background-image: url("images/background.jpg");
+
+        }
+
+        #border {
+            margin-top: 2%;
+        }
+
+        /* images */
+        div img {
+            width: 230px;
+
+            float: left;
+        }
+
+        #pacMan {
+            width: 200px;
+            left: 4%;
+            position: absolute;
+            visibility: visible;
+
+        }
+        #pacMan2 {
+            width: 200px;
+            left: 4%;
+            position: absolute;
+            visibility: hidden;
+
+        }
+
+        /* ghost */
+        #ghost {
+            margin-left: 55%;
+
+        }
+
+        main {
+            top: 67%;
+            left: 10%;
+            position: fixed;
+            background-color: #3dff18;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 5px 5px 10px rgba(53, 61, 83, 0.9);
+            border: 1px solid black;
+
+
+        }
+
+        #underG {
+
+            height: 20px;
+            width: 1300px;
+            top: -40px;
+            box-shadow: 5px 5px 10px rgba(53, 61, 83, 0.9);
+        }
+
+        button {
+            background-color: #1b1b1b;
+            color: white;
+            width: 100px;
+            padding: 6px;
+            margin-bottom: 4%;
+            margin-left: 2%;
+            font-size: 10px;
+
+        }
+
+        h2 {
+            color: rgb(2, 2, 2);
+        }
+
+        /* 9 veragen */
+        #VR1{
+            margin-left: 300px;
+            visibility: visible ;
+        }
+        #VR2{
+            margin-left: 300px;
+            visibility: hidden;
+        }
+        #VR3{
+            margin-left: 300px;
+            visibility: hidden;
+        }
+        #VR4{
+            margin-left: 300px;
+            visibility: hidden;
+        }
+        #VR5{
+            margin-left: 300px;
+            visibility: hidden;
+        }
+        #VR6{
+            margin-left: 300px;
+            visibility: hidden;
+        }
+        #VR7{
+            margin-left: 300px;
+            visibility: hidden;
+        }
+        #VR8{
+            margin-left: 300px;
+            visibility: hidden;
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+    <p id="source">1</p>
+
+
+    <div id="border">
+        <div id="pacMan"><img src="images/pacman.png"></div>
+        <div id="pacMan2"><img src="images/pacmanDis.png"></div>
+
+        <!-- ghost -->
+        <div id="ghost">
+            <div id="ghost1"><img src="images/ghost.png"></div>
+            <div id="ghost2"><img src="images/ghost.png"></div>
+            <div id="ghost3"><img src="images/ghost.png"></div>
+            <div id="ghost4"><img src="images/ghost.png"></div>
+            <div id="ghost5"><img src="images/ghost.png"></div>
+            <div id="ghost6"><img src="images/ghost.png"></div>
+            <div id="ghost7"><img src="images/ghost.png"></div>
+        </div>
+    </div>
+    <img id="underG" src="images/underground.jpg">
+
+
+    <!-- 9 veragen op te niveu  -->
+    <!-- vraag Een -->
+    <main id="VR1">
+        <h2>2 &#215 8 = <h1 id="antword1">?</h1></h2>
+        <!-- Knop kiezen -->
+        <button onclick="setTF2()">15</button>
+        <button onclick="setTF3()">8</button>
+        <button onclick="setTF1()">16</button>
+
+    </main>
+
+    <!-- vraag 2 -->
+    <main id="VR2">
+        <h2>4 &#215 8 = <h1 id="antword2">?</h1></h2>
+        <!-- Knop kiezen -->
+        <button onclick="setTF6()">52</button>
+        <button onclick="setTF5()">81</button>
+        <button onclick="setTF4()">32</button>
+
+    </main>
+
+    <!-- vraag 3 -->
+    <main id="VR3">
+        <h2>1 &#215 1 = <h1 id="antword3">?</h1></h2>
+        <!-- Knop kiezen -->
+        <button onclick="setTF2()">5</button>
+        <button onclick="setTF3()">8</button>
+        <button onclick="setTF1()">1</button>
+
+    </main>
+
+    <!-- vraag 4 -->
+    <main id="VR4">
+        <h2>1 &#215 1 = <h1 id="antword4">?</h1></h2>
+        <!-- Knop kiezen -->
+        <button onclick="setTF2()">5</button>
+        <button onclick="setTF3()">8</button>
+        <button onclick="setTF1()">1</button>
+
+    </main>
+
+    <!-- vraag 5 -->
+    <main id="VR5">
+        <h2>1 &#215 1 = <h1 id="antword5">?</h1></h2>
+        <!-- Knop kiezen -->
+        <button onclick="setTF2()">5</button>
+        <button onclick="setTF3()">8</button>
+        <button onclick="setTF1()">1</button>
+
+    </main>
+
+    <!-- vraag 6 -->
+    <main id="VR6">
+        <h2>1 &#215 1 = <h1 id="antword6">?</h1></h2>
+        <!-- Knop kiezen -->
+        <button onclick="setTF2()">5</button>
+        <button onclick="setTF3()">8</button>
+        <button onclick="setTF1()">1</button>
+
+    </main>
+
+    <!-- vraag 7 -->
+    <main id="VR7">
+        <h2>1 &#215 1 = <h1 id="antword7">?</h1></h2>
+        <!-- Knop kiezen -->
+        <button onclick="setTF2()">5</button>
+        <button onclick="setTF3()">8</button>
+        <button onclick="setTF1()">1</button>
+
+    </main>
+
+    <!-- vraag 8 -->
+    <main id="VR8">
+        <h2>7 &#215 9 = <h1 id="antword8">?</h1></h2>
+        <!-- Knop kiezen -->
+        <button onclick="setTF2()">5</button>
+        <button onclick="setTF3()">8</button>
+        <button onclick="setTF1()">1</button>
+    </main>
+
+
+<script>
+    /* animation 1 */
+    function noise() {
+        document.getElementById('pacMan').style.marginTop = '2%';
+        document.getElementById('pacMan').style.rotation = '3deg';
+        document.getElementById('pacMan2').style.marginTop = '2%';
+        document.getElementById('pacMan2').style.rotation = '3deg';
+
+    }
+    function animation1() {
+        document.getElementById("ghost1").style.marginLeft = "-240%";
+    }
+
+    function destroyed() {
+        document.getElementById('ghost1').style.opacity = '0.5';
+        document.getElementById('ghost1').style.transform = "rotate(-12deg)";
+
+    }
+    setTimeout("animation1()", 3000);
+
+    /* vraag Een */
+    function setTF1() {
+        document.getElementById("antword1").innerHTML = "16";
+        document.getElementById('pacMan').style.marginTop = '-2%';
+        document.getElementById('pacMan').style.visibility = 'visible';
+        document.getElementById('pacMan2').style.visibility = 'hidden';
+        document.getElementById('VR1').style.visibility = 'hidden';
+        document.getElementById('VR2').style.visibility = 'visible';
+
+        destroyed();
+    }
+
+    function setTF2() {
+        document.getElementById("antword1").innerHTML = "15";
+        document.getElementById('pacMan').style.visibility = 'hidden';
+        document.getElementById('pacMan2').style.visibility = 'visible';
+
+        noise();
+    }
+    function setTF3() {
+        document.getElementById("antword1").innerHTML = "6";
+        document.getElementById('pacMan').style.visibility = 'hidden';
+        document.getElementById('pacMan2').style.visibility = 'visible';
+        noise();
+    }
+
+
+    //
+
+
+    /* animation 2 */
+    function noise() {
+        document.getElementById('pacMan').style.marginTop = '2%';
+        document.getElementById('pacMan').style.rotation = '3deg';
+        document.getElementById('pacMan2').style.marginTop = '2%';
+        document.getElementById('pacMan2').style.rotation = '3deg';
+
+    }
+    function animation1() {
+        document.getElementById("ghost2").style.marginLeft = "-240%";
+    }
+
+    function destroyed() {
+        document.getElementById('ghost2').style.opacity = '0.5';
+        document.getElementById('ghost2').style.transform = "rotate(-12deg)";
+
+    }
+    setTimeout("animation1()", 3000);
+
+    /* vraag twee */
+    function setTF4() {
+        document.getElementById("antword2").innerHTML = "32";
+        document.getElementById('pacMan').style.marginTop = '-2%';
+        document.getElementById('pacMan').style.visibility = 'visible';
+        document.getElementById('pacMan2').style.visibility = 'hidden';
+        destroyed();
+    }
+    function setTF5() {
+        document.getElementById("antword2").innerHTML = "15";
+        document.getElementById('pacMan').style.visibility = 'hidden';
+        document.getElementById('pacMan2').style.visibility = 'visible';
+
+        noise();
+    }
+    function setTF6() {
+        document.getElementById("antword2").innerHTML = "6";
+        document.getElementById('pacMan').style.visibility = 'hidden';
+        document.getElementById('pacMan2').style.visibility = 'visible';
+        noise();
+    }
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

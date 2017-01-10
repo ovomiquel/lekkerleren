@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="div1" style="visibility: hidden">Reveal Div 1 after 1 second</div>
+<div id="div2" style="visibility: hidden">Reveal Div 2 after 5 seconds</div>
+
+<script type="text/javascript">
+    function showIt() {
+        document.getElementById("div1").style.visibility = "visible";
+    }
+    setTimeout("showIt()", 2000); // after 1 sec
+
+    function showIt() {
+        document.getElementById("div2").style.visibility = "visible";
+    }
+    setTimeout("showIt()", 5000); // after 5 secs
+</script>
+
+</body>
+</html>

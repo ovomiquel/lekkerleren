@@ -1,0 +1,400 @@
+<html>
+<head>
+    <title>Vr1</title>
+    <meta content="">
+    <style>
+        html{
+            width: 5000px;
+            overflow: visible;
+        }
+
+        .box{
+            width: 200px;
+            height: 150px;
+            background-color: #7279a6;
+            margin-left: 40%;
+            position: absolute;
+            margin-top: 20%;
+            border-radius: 8px;
+            padding: 12px;
+            text-align: center;
+            font-size: 30px;
+
+        }
+        button{
+            width: 100px;
+            height: 60px;
+            margin-top: 10px;
+            background-color: #aa220e;
+            color: wheat;
+            border: 1px solid black;
+        }
+        button:hover{
+            background-color: chartreuse;
+            color: #1b1b1b;
+        }
+        img{
+            width: 2%;
+            height: 14%;
+            margin-left: 1300px;
+            float: left;
+        }
+        #naam1{
+            visibility: visible;
+        }
+        #naam2{
+            visibility: hidden;
+        }
+        #naam3{
+            visibility: hidden;
+        }
+        #naam4{
+            visibility: hidden;
+        }#naam5{
+             visibility: hidden;
+         }#naam6{
+              visibility: hidden;
+          }#naam7{
+               visibility: hidden;
+           }#naam8{
+                visibility: hidden;
+            }#naam9{
+                 visibility: hidden;
+             }#naam10{
+                  visibility: hidden;
+              }
+        #pokooimages{
+            margin-top: 10px;;
+        }
+    </style>
+
+
+</head>
+<body>
+<div id="pokooimages">
+    <!-- image vraag 1 -->
+    <img id="pokoo1" src="images/pokemon.png">
+    <!-- image vraag 2 -->
+    <img id="pokoo2" src="images/pokemon.png">
+    <!-- image vraag 3 -->
+    <img id="pokoo3" src="images/pokemon.png">
+    <!--  image vraag 4 -->
+    <img id="pokoo4" src="images/pokemon.png">
+    <!-- image vraag 5 -->
+    <img id="pokoo5" src="images/pokemon.png">
+    <!-- image vraag 6 -->
+    <img id="pokoo6" src="images/pokemon.png">
+    <!-- image vraag 7 -->
+    <img id="pokoo7" src="images/pokemon.png">
+    <!-- imagev raag 8 -->
+    <img id="pokoo8" src="images/pokemon.png">
+    <!-- image vraag 9 -->
+    <img id="pokoo9" src="images/pokemon.png">
+    <!-- image vraag 10 -->
+    <img id="pokoo10" src="images/pokemon.png">
+
+</div>
+
+<!-- vraag1 -->
+<div class="box" id="naam1">
+    Vul antwoord in 2x1 = <input type="text" id="naamInv1" maxlength="25" autofocus>
+    <button  onclick="check1()">Controleren</button>
+</div>
+
+<!-- vraag 2 -->
+<div class="box" id="naam2">
+    Vul antwoord in 2x2 = <input type="text" id="naamInv2" maxlength="25" autofocus>
+    <button onclick="check2()">Click me</button>
+</div>
+
+<!-- vraag 3 -->
+<div class="box" id="naam3">
+    Vul antwoord in 3x3 = <input type="text" id="naamInv3" maxlength="25" autofocus>
+    <button onclick="check3()">Click me</button>
+</div>
+
+<!-- vraag 4 -->
+<div class="box" id="naam4">
+    Vul antwoord in 1x4 = <input type="text" id="naamInv4" maxlength="25" autofocus>
+    <button onclick="check4()">Click me</button>
+</div>
+
+
+<!-- vraag 5 -->
+<div class="box" id="naam5">
+    Vul antwoord in 1x5 = <input type="text" id="naamInv5" maxlength="25" autofocus>
+    <button onclick="check5()">Click me</button>
+</div>
+
+<!-- vraag 6 -->
+<div class="box" id="naam6">
+    Vul antwoord in 1x6 = <input type="text" id="naamInv6" maxlength="25" autofocus>
+    <button onclick="check6()">Click me</button>
+</div>
+
+<!-- vraag 7 -->
+<div class="box" id="naam7">
+    Vul antwoord in 1x7 = <input type="text" id="naamInv7" maxlength="25" autofocus>
+    <button onclick="check7()">Click me</button>
+</div>
+
+<!-- vraag 8 -->
+<div class="box" id="naam8">
+    Vul antwoord in 1x8 = <input type="text" id="naamInv8" maxlength="25" autofocus>
+    <button onclick="check8()">Click me</button>
+</div>
+
+<!-- vraag 9 -->
+<div class="box" id="naam9">
+    Vul antwoord in 1x9 = <input type="text" id="naamInv9" maxlength="25" autofocus>
+    <button onclick="check9()">Click me</button>
+</div>
+
+<!-- vraag 10 -->
+<div class="box" id="naam10">
+    Vul antwoord in 1x10 = <input type="text" id="naamInv10" maxlength="25" autofocus>
+    <button onclick="check10()">Click me</button>
+</div>
+
+<script>
+
+    //var image = new Array(3);
+    //image [0] = "<img src='images/logo.png' width='' />";
+    //image [1] = "<img src='images/pokemon.png' width='' />";
+    //image [2] = "<img src='images/tikTrue.jpg' width='' />";
+
+    // Rimg = Math.floor(Math.random() * image.length);
+    // document.write(image[Rimg]+"<br>");
+
+
+    /* animation1 */
+    function animation1() {
+        document.getElementById("pokoo1").style.transition = " all 2s";
+        document.getElementById("pokoo1").style.marginLeft = "0";
+        document.getElementById('naam1').style.visibility = "hidden";
+        document.getElementById('naam2').style.visibility = "visible";
+    }
+    function check1() {
+        var a = 1;
+        var answer = document.getElementById('naamInv1').value;
+        if (answer == 1){
+            alert("true");
+            animation1();
+        }
+        else {
+            alert("false")
+        }
+    }
+
+    //
+
+    /* animation2 */
+    function animation2() {
+        document.getElementById("pokoo2").style.transition = " all 2s";
+        document.getElementById("pokoo2").style.marginLeft = "0";
+        document.getElementById('naam2').style.visibility = "hidden";
+        document.getElementById('naam3').style.visibility = "visible";
+    }
+    function check2() {
+        var a = 2;
+        var answer = document.getElementById('naamInv2').value;
+        if (answer == 2){
+            alert("true");
+            animation2();
+        }
+        else {
+            alert("false")
+        }
+    }
+
+    //
+
+    /* animation3 */
+    function animation3() {
+        document.getElementById("pokoo3").style.transition = " all 2s";
+        document.getElementById("pokoo3").style.marginLeft = "0";
+        document.getElementById('naam3').style.visibility = "hidden";
+        document.getElementById('naam4').style.visibility = "visible";
+    }
+    function check3() {
+        var a = 3;
+        var answer = document.getElementById('naamInv3').value;
+        if (answer == 3){
+            alert("true");
+            animation3();
+        }
+        else {
+            alert("false")
+        }
+    }
+
+    //
+
+    /* animation4 */
+    function animation4() {
+        document.getElementById("pokoo4").style.transition = " all 2s";
+        document.getElementById("pokoo4").style.marginLeft = "0";
+        document.getElementById('naam4').style.visibility = "hidden";
+        document.getElementById('naam5').style.visibility = "visible";
+    }
+    function check4() {
+        var a = 4;
+        var answer = document.getElementById('naamInv4').value;
+        if (answer == 4){
+            alert("true");
+            animation4();
+        }
+        else {
+            alert("false")
+        }
+    }
+
+    //
+
+    /* animation5 */
+    function animation5() {
+        document.getElementById("pokoo5").style.transition = " all 2s";
+        document.getElementById("pokoo5").style.marginLeft = "0";
+        document.getElementById('naam5').style.visibility = "hidden";
+        document.getElementById('naam6').style.visibility = "visible";
+    }
+    function check5() {
+        var a = 5;
+        var answer = document.getElementById('naamInv5').value;
+        if (answer == 5){
+            alert("true");
+            animation5();
+        }
+        else {
+            alert("false")
+        }
+    }
+
+    //
+
+    /* animation6 */
+    function animation6() {
+        document.getElementById("pokoo6").style.transition = " all 2s";
+        document.getElementById("pokoo6").style.marginLeft = "0";
+        document.getElementById('naam6').style.visibility = "hidden";
+        document.getElementById('naam7').style.visibility = "visible";
+    }
+    function check6() {
+        var a = 6;
+        var answer = document.getElementById('naamInv6').value;
+        if (answer == 6){
+            alert("true");
+            animation6();
+        }
+        else {
+            alert("false")
+        }
+    }
+
+    //
+
+
+
+    /* animation7 */
+    function animation7() {
+        document.getElementById("pokoo7").style.transition = " all 2s";
+        document.getElementById("pokoo7").style.marginLeft = "0";
+        document.getElementById('naam7').style.visibility = "hidden";
+        document.getElementById('naam8').style.visibility = "visible";
+    }
+    function check7() {
+        var a = 7;
+        var answer = document.getElementById('naamInv7').value;
+        if (answer == 7){
+            alert("true");
+            animation7();
+        }
+        else {
+            alert("false")
+        }
+    }
+
+    //
+
+
+    /* animation7 */
+    function animation8() {
+        document.getElementById("pokoo8").style.transition = " all 2s";
+        document.getElementById("pokoo8").style.marginLeft = "0";
+        document.getElementById('naam8').style.visibility = "hidden";
+        document.getElementById('naam9').style.visibility = "visible";
+    }
+    function check8() {
+        var a = 8;
+        var answer = document.getElementById('naamInv8').value;
+        if (answer == 8){
+            alert("true");
+            animation8();
+        }
+        else {
+            alert("false")
+        }
+    }
+
+    //
+
+
+    /* animation7 */
+    function animation9() {
+        document.getElementById("pokoo9").style.transition = " all 2s";
+        document.getElementById("pokoo9").style.marginLeft = "0";
+        document.getElementById('naam9').style.visibility = "hidden";
+        document.getElementById('naam10').style.visibility = "visible";
+    }
+    function check9() {
+        var a = 9;
+        var answer = document.getElementById('naamInv9').value;
+        if (answer == 9){
+            alert("true");
+            animation9();
+        }
+        else {
+            alert("false")
+        }
+    }
+
+    //
+
+
+    /* animation7 */
+    function animation10() {
+        document.getElementById("pokoo10").style.transition = " all 2s";
+        document.getElementById("pokoo10").style.marginLeft = "0";
+        document.getElementById('naam10').style.visibility = "hidden";
+        document.getElementById('naam9').style.visibility = "visible";
+    }
+    function NextPage() {
+        window.location = "less2.html"
+
+    }
+    function check10() {
+        var a = 10;
+        var answer = document.getElementById('naamInv10').value;
+        if (answer == 10){
+            alert("true");
+            animation10();
+            NextPage();
+
+        }
+        else {
+            alert("false")
+        }
+    }
+
+    //
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
