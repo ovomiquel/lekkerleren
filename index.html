@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <style>
+        /* css voor video background */
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        body {
+            font-family: Calibri;
+
+        }
+
+        video {
+            width: auto;
+            height: auto;
+            min-height: 100%;
+            min-width: 100%;
+            position: fixed;
+
+        }
+
+        /* knop START */
+        #div1 {
+            margin-left: 530px;
+            margin-top: 180px;
+            height: 80px;
+            width: 180px;
+            border-radius: 6px;
+            border: 2px solid #a60a04;
+            background-color: rgba(41, 15, 12, 0.83);
+            font-size: 20px;
+            text-transform: uppercase;
+        }
+        #div1 a {
+            text-decoration: none;
+            color: #e8e8e8;
+        }
+
+    </style>
+
+</head>
+<body>
+<!-- vidoe background -->
+<section id="body">
+    <video id="video-bg-lg" preload="auto" autoplay="autoplay" loop="loop">
+        <source src="video/math.mp4" type="video/mp4">
+    </video>
+</section>
+
+<!-- Start knop website -->
+<button id="div1"><a href="home.html">Start</a></button>
+
+
+
+<!-- scriept-->
+<script>
+    /* time when knop moet visiable worden */
+    function showIt() {
+        document.getElementById("div1").style.position = "absolute";
+    }
+    setTimeout("showIt()", 3000);
+    function showIt1() {
+        document.getElementById("div1").style.transition = "all 0.65s";
+        document.getElementById("div1").style.textAlign = "center";
+        document.getElementById("div1").style.fontSize = "30px";
+        document.getElementById("div1").style.margin = "10px";
+    }
+    setTimeout("showIt1()", 6000);
+    function showIt2() {
+        document.getElementById("div1").style.margin = "100px";
+        document.getElementById("div1").style.backgroundColor = "#9350A6";
+    }
+    setTimeout("showIt2()", 8000);
+
+
+
+    // setInterval(function(){ alert("Hello"); }, 3000);
+    // function myfunction() {
+    /* hide video toen click op knop om te beginen */
+    //   document.getElementById("video-bg-lg").style.display = "none";
+
+    /* muted music toen click op knop start */
+    // document.getElementById("video-bg-lg").muted = "muted";
+
+    /* hide knop when click for start */
+    //document.getElementById('div1').style.display = "none";}
+
+</script>
+
+
+</body>
+</html>
