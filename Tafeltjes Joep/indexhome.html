@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <style>
+        body{
+            background-image: url("images/backGindexHome.jpg");
+            background-size: 100%;
+            background-attachment: fixed;
+            color: white;
+
+        }
+        #logo{
+            margin-left: 30%;
+        }
+        #naam{
+            margin-left: 32%;
+            margin-top: 2%;
+            border:2px solid  rgba(89, 36, 56, 0.58);
+            border-radius: 12px;
+            background-color: rgba(89, 36, 56, 0.58);
+            margin-right: 40%;
+        }
+        #kop{
+            margin-left: 31%;
+        }
+        div img{
+            margin-top: 40px;
+            margin-left: 10px;
+            height: 230px;
+            width: 560px;
+
+        }
+
+        .dropbtn {
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            width: 140px;
+            padding: 10px;
+        }
+
+        .dropbtn:hover, .dropbtn:focus {
+            background-color: #3e8e41;
+        }
+
+
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+
+        }
+
+        .dropdown a:hover {background-color: #f1f1f1}
+
+        .show {display:block;}
+
+        #naaminvoer{
+            width: 40px;
+            background-color: #4CAF50;
+            border: none;
+        }
+
+
+
+        .vthemabutton1{
+            position: absolute;
+            border: #4CAF50;
+            background-color: rgba(255, 0, 100, 1);
+            top: 0;
+            right: 0;
+            min-width: 9%;
+        }
+
+        .vthemabutton2{
+            position: absolute;
+            border: #4CAF50;
+            background-color: rgba(255, 0, 100, 1);
+            top: 0;
+            right: 10%;
+            min-width: 9%;
+        }
+
+        .vthemabutton3{
+            position: absolute;
+            border: #4CAF50;
+            background-color: rgba(255, 0, 100, 1);
+            top: 0;
+            right: 20%;
+            min-width: 9%;
+        }
+
+        .mthemabutton1{
+            position: absolute;
+            border: #4CAF50;
+            background-color: rgba(0, 0, 200, 1);
+            top: 4%;
+            right: 0;
+            min-width: 9%;
+        }
+
+        .mthemabutton2{
+            position: absolute;
+            border: #4CAF50;
+            background-color: rgba(0, 0, 200, 1);
+            top: 4%;
+            right: 10%;
+            min-width: 9%;
+        }
+
+        .mthemabutton3{
+            position: absolute;
+            border: #4CAF50;
+            background-color: rgba(0, 0, 200, 1);
+            top: 4%;
+            right: 20%;
+            min-width: 9%;
+        }
+
+
+        /*knop verder gaan*/
+        #submit{
+            visibility: hidden;
+            width: 100px;
+
+        }
+        button{
+            color: whitesmoke;
+            background-color: #1b1b1b;
+            border-radius: 16%;
+            border: 1px solid red;
+        }
+
+
+
+
+    </style>
+    <script type="text/javascript">
+        <!--
+
+        function createCookie(name,value,days) {
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime()+(days*24*60*60*1000));
+                var expires = "; expires="+date.toGMTString();
+            }
+            else var expires = "";
+            document.cookie = name+"="+value+expires+"; path=/";
+        }
+
+        function readCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+
+        function eraseCookie(name) {
+            createCookie(name,"",-1);
+        }
+
+        var backColor = new Array();
+
+        backColor[0] = 'url("images/prinsesthema.jpg")';
+        backColor[1] = 'url("images/paardthema.jpg")';
+        backColor[2] = 'url("images/kittythema.jpg")';
+        backColor[3] = 'url("images/pokemonthema.jpg")';
+        backColor[4] = 'url("images/mariothema.jpg")';
+        backColor[5] = 'url("images/voetbalthema.jpg")';
+
+
+        function changeBG(whichColor){
+            document.body.style.backgroundImage = backColor[whichColor];
+            createCookie('backColor', whichColor);
+        }
+
+        if(readCookie('backColor'))
+            document.write('<style type="text/css">body {background-image: ' + backColor[readCookie("backColor")] + ';}<\/style>');
+
+        -->
+        </script>
+</head>
+<body>
+<script>
+
+    function submit()
+    {
+        var submit = [""];
+        window.location = "home.html"
+    }
+
+</script>
+<!-- logo -->
+<div id="logo">
+    <img src="images/logonew.png">
+</div>
+
+<script>
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+
+</script>
+
+<script>
+    function setName() {
+        var input = document.getElementById("naamInv").value;
+        document.getElementById("kop").innerHTML = "Leuk dat je komt leren " + input;
+        document.getElementById('submit').style.visibility = 'visible';
+    }
+</script>
+<h1 id="kop"></h1><br>
+<div id="naam">
+    Wat is je naam? <input type="text" id="naamInv" maxlength="25">
+    <button id="naaminvoer" onclick="setName()">OK</button><br><br><br>
+    <div id="verder2" ><button id="submit" onclick="submit()">Verder</button></div>
+</div>
+
+<button class="vthemabutton1" onclick="changeBG(0)">prinsessen</button>
+<button class="vthemabutton2" onclick="changeBG(1)">paarden</button>
+<button class="vthemabutton3" onclick="changeBG(2)">Kitty</button>
+<button class="mthemabutton1" onclick="changeBG(3)">Pokemon</button>
+<button class="mthemabutton2" onclick="changeBG(4)">Mario</button>
+<button class="mthemabutton3" onclick="changeBG(5)">Voetbal</button>
+
+</body>
+</html>

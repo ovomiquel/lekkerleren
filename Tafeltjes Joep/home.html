@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <style>
+        div img{
+            margin-top: 40px;
+            margin-left: 10px;
+            height: 230px;
+            width: 560px;
+        }
+
+        .dropbtn {
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            width: 140px;
+            padding: 10px;
+        }
+
+        .dropbtn:hover, .dropbtn:focus {
+            background-color: #3e8e41;
+        }
+
+        .dropdown {
+            position: absolute;
+            display: inline-block;
+            top: 0px;
+            right: 0px;
+
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            min-width: 200px;
+            overflow: auto;
+            float: left;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+
+        }
+
+        .dropdown a:hover {background-color: #f1f1f1}
+
+        .show {display:block;}
+
+        #naaminvoer{
+
+        }
+    </style>
+
+</head>
+<script type="text/javascript">
+    <!--
+
+    function createCookie(name,value,days) {
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime()+(days*24*60*60*1000));
+            var expires = "; expires="+date.toGMTString();
+        }
+        else var expires = "";
+        document.cookie = name+"="+value+expires+"; path=/";
+    }
+
+    function readCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0;i < ca.length;i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1,c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        }
+        return null;
+    }
+
+    function eraseCookie(name) {
+        createCookie(name,"",-1);
+    }
+
+    var backColor = new Array();
+
+    backColor[0] = 'url("images/prinsesthema.jpg")';
+    backColor[1] = 'url("images/paardthema.jpg")';
+    backColor[2] = 'url("images/kittythema.jpg")';
+    backColor[3] = 'url("images/pokemonthema.jpg")';
+    backColor[4] = 'url("images/mariothema.jpg")';
+    backColor[5] = 'url("images/voetbalthema.jpg")';
+
+
+    function changeBG(whichColor){
+        document.body.style.backgroundImage = backColor[whichColor];
+        createCookie('backColor', whichColor);
+    }
+
+    if(readCookie('backColor'))
+        document.write('<style type="text/css">body {background-image: ' + backColor[readCookie("backColor")] + ';}<\/style>');
+
+    -->
+</script>
+<body>
+<script>
+
+    function themakitty()
+    {
+        var kitty = ["images/"];
+        document.body.style.background = "url('" + kitty + "')";
+    }
+
+    function themapaarden()
+    {
+        var paarden = ["images/fortunee.png"];
+        document.body.style.background = "url('" + paarden + "')";
+    }
+
+    function themaprinsessen()
+    {
+        var prinsessen = ["images/"];
+        document.body.style.background = "url('" + prinsessen + "')";
+    }
+
+    function themastandard()
+    {
+        var standard = ["images/background.jpg"];
+        document.body.style.background = "url('" + standard + "')";
+    }
+
+    function submit()
+    {
+        var submit = [""];
+        window.location = "home.html"
+    }
+
+</script>
+<!-- logo -->
+<div>
+    <img src="images/logonew.png">
+</div>
+<script>
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+
+</script>
+<!-- navigation -->
+<div id="nav">
+    <div id="nav-wrapper"><br>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="zelfstudie.html">Zelfstudie</a></li>
+            <li><a href="#">Over website</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul><br>
+    </div>
+</div>
+
+<!-- section -->
+<section id="sectionHome">
+    <!-- knop start less cijver 1 -->
+    <section id="section2">
+        <h2>Twee manieren om de tafels leren</h2>
+    </section>
+    <section id="section3">
+        <button id="methode1button" onclick="window.location='kiezen%20voor%20welk%20lesse.html'">Methode 1</button>
+        <button id="methode2button" onclick="window.location='less1M2.html'">Methode 2</button>
+    </section>
+</section>
+
+
+
+
+<script>
+
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+
+</script>
+
+
+</div>
+
+
+
+</body>
+</html>
