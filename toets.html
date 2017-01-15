@@ -1,160 +1,467 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Tafels</title>
-    <style>
-        html{
-            background-color: rgb(150,150,255);
-        }
-        .box{
-            width: 200px;
-            height: 150px;
-            background-color: rgba(255,255,255,0.2);
-            position: absolute;
-            margin-left: 42%;
-            margin-top: 16%;
-            border-radius: 8px;
-            padding-top: 50px;
-            text-align: center;
-            font-size: 30px;
-        }
-        button{
-            background-color: rgba(20,200,20,1);
-            height: 40px;
-            border: none;
-        }
-        input{
-            width: 30px;
-            height: 25px;
-            margin-top: -5px;
-        }
-    </style>
-</head>
-<body>
+<html lang="nl">
+    <head>
+        <meta charset="UTF-8">
+        <title>LekkerLeren Toets</title>
+        <style>
+        /*promptbox*/
+            #modal {
+                display: block;
+                position: fixed;
+                z-index: 1;
+                padding-top: 100px;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background-color: rgb(0,0,0);
+                background-color: rgba(0,0,0,0.4);
+            }
 
-    <p id="Question" class="box"></p>
-<script>
-//var
-    var cijfer = 10;
-    var fouten = 0;
-    var a = Math.floor(Math.random() * 10) + 1;
-    var b = Math.floor(Math.random() * 10) + 1;
-    var c = Math.floor(Math.random() * 10) + 1;
-    var d = Math.floor(Math.random() * 10) + 1;
-    var e = Math.floor(Math.random() * 10) + 1;
-    var f = Math.floor(Math.random() * 10) + 1;
-    var g = Math.floor(Math.random() * 10) + 1;
-    var h = Math.floor(Math.random() * 10) + 1;
-    var i = Math.floor(Math.random() * 10) + 1;
-    var j = Math.floor(Math.random() * 10) + 1;
-    var z = prompt("Welke tafel wil je toetsen?");
-//Question
-    document.getElementById("Question").innerHTML = a + " x " + z + ' = <input type="text" id="1" maxlength="3"><br><button onclick="Question2()">Volgende</button>';
+            /* Modal Content */
+            .modal-content {
+                position: relative;
+                background-color: #fefefe;
+                margin: auto;
+                padding: 0;
+                border: 1px solid #888;
+                width: 80%;
+                box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+                -webkit-animation-name: animatetop;
+                -webkit-animation-duration: 0.4s;
+                animation-name: animatetop;
+                animation-duration: 0.4s
+            }
 
-    function Question2(){
-        document.getElementById("Question").innerHTML = b + " x " + z + ' = <input type="text" id="2" maxlength="3"><br><button onclick="Question3()">Volgende</button>';
-    }
+            /* Add Animation */
+            @-webkit-keyframes animatetop {
+                from {top:-300px; opacity:0}
+                to {top:0; opacity:1}
+            }
 
-    function Question3(){
-        document.getElementById("Question").innerHTML = c + " x " + z + ' = <input type="text" id="3" maxlength="3"><br><button onclick="Question4()">Volgende</button>';
-    }
+            @keyframes animatetop {
+                from {top:-300px; opacity:0}
+                to {top:0; opacity:1}
+            }
 
-    function Question4(){
-        document.getElementById("Question").innerHTML = d + " x " + z + ' = <input type="text" id="4" maxlength="3"><br><button onclick="Question5()">Volgende</button>';
-    }
+            /* The Close Button */
+            #close {
+                color: white;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+            }
 
-    function Question5(){
-        document.getElementById("Question").innerHTML = e + " x " + z + ' = <input type="text" id="5" maxlength="3"><br><button onclick="Question6()">Volgende</button>';
-    }
+            #close:hover,
+            #close:focus {
+                color: #000;
+                text-decoration: none;
+                cursor: pointer;
+            }
 
-    function Question6(){
-        document.getElementById("Question").innerHTML = f + " x " + z + ' = <input type="text" id="6" maxlength="3"><br><button onclick="Question7()">Volgende</button>';
-    }
+            /*header - body - footer*/
+            .modal-header {
+                padding: 2px 16px;
+                background-color: rgb(0, 193, 255);
+                color: white;
+            }
 
-    function Question7(){
-        document.getElementById("Question").innerHTML = g + " x " + z + ' = <input type="text" id="7" maxlength="3"><br><button onclick="Question8()">Volgende</button>';
-    }
+            .modal-body {padding: 2px 16px;}
 
-    function Question8(){
-        document.getElementById("Question").innerHTML = h + " x " + z + ' = <input type="text" id="8" maxlength="3"><br><button onclick="Question9()">Volgende</button>';
-    }
+            .modal-footer {
+                padding: 2px 16px;
+                background-color: rgb(0, 193, 255);
+                color: white;
+            }
+            .ftbtn{
 
-    function Question9(){
-        document.getElementById("Question").innerHTML = i + " x " + z + ' = <input type="text" id="9" maxlength="3"><br><button onclick="Question10()">Volgende</button>';
-    }
+                margin-top: 7px;
+                margin-bottom: 10px;
+                margin-right: 5px;
+                display: inline-block;
+                padding: 15px 25px;
+                font-size: 14px;
+                cursor: pointer;
+                text-align: center;
+                text-decoration: none;
+                outline: none;
+                color: #fff;
+                background-color: lightskyblue;
+                border: none;
+                border-radius: 15px;
+                box-shadow: 0 9px #999;
+                width: 150px;
 
-    function Question10(){
-        document.getElementById("Question").innerHTML = j + " x " + z + ' = <input type="text" id="10" maxlength="3"><br><button onclick="setAnswer()">Klaar</button>';
-    }
+            }
+            .ftbtn:hover {
+                background-color: lightseagreen;
+            }
 
-//Answer
-    function setAnswer() {
-        //var text1 = "";
-        var input1 = document.getElementById("1");
-        if(input1 != a * z){
-            //text1 += "<br>" + a + " x " + z + " = " + a * z + " jouw antwoord: " + input1;
-            fouten++;
-        }
-        /*var text2 = "";
-        var input2 = document.getElementById("2").value;
-        if(input2 != b * z) {
-            text2 += "<br>" + a + " x " + z + " = " + a * z + " jouw antwoord: " + input2;
-            fouten++;
-        }
-        var text3 = "";
-        var input3 = document.getElementById("3").value;
-        if(input3 != c * z) {
-            text3 += "<br>" + a + " x " + z + " = " + a * z + " jouw antwoord: " + input3;
-            fouten++;
-        }
-        var text4 = "";
-        var input4 = document.getElementById("4").value;
-        if(input4 != d * z) {
-            text4 += "<br>" + a + " x " + z + " = " + a * z + " jouw antwoord: " + input4;
-            fouten++;
-        }
-        var text5 = "";
-        var input5 = document.getElementById("5").value;
-        if(input5 != e * z) {
-            text5 += "<br>" + a + " x " + z + " = " + a * z + " jouw antwoord: " + input5;
-            fouten++;
-        }
-        var text6 = "";
-        var input6 = document.getElementById("6").value;
-        if(input6 != f * z) {
-            text6 += "<br>" + a + " x " + z + " = " + a * z + " jouw antwoord: " + input6;
-            fouten++;
-        }
-        var text7 = "";
-        var input7 = document.getElementById("7").value;
-        if(input7 != g * z) {
-            text7 += "<br>" + a + " x " + z + " = " + a * z + " jouw antwoord: " + input7;
-            fouten++;
-        }
-        var text8 = "";
-        var input8 = document.getElementById("8").value;
-        if(input8 != h * z) {
-            text8 += "<br>" + a + " x " + z + " = " + a * z + " jouw antwoord: " + input8;
-            fouten++;
-        }
-        var text9 = "";
-        var input9 = document.getElementById("9").value;
-        if(input9 != i * z) {
-            text9 += "<br>" + a + " x " + z + " = " + a * z + " jouw antwoord: " + input9;
-            fouten++;
-        }
-        var text10 = "";
-        var input10 = document.getElementById("10").value;
-        if(input10 != j * z) {
-            text10 += "<br>" + a + " x " + z + " = " + a * z + " jouw antwoord: " + input10;
-            fouten++;
-        }
-        if(fouten == 0) {
-            fouten--;
-        }*/
-        document.getElementById("Question").innerHTML = "Je cijfer is een: " + (cijfer - fouten) + "<br><br> Fouten:" + text1 + text2 + text3 + text4 + text5 + text6 + text7 + text8 + text9 + text10;
-    }
-</script>
-</body>
+            .ftbtn:active {
+                background-color: lightseagreen;
+                box-shadow: 0 5px #666;
+                transform: translateY(4px);
+            }
+        /*pagina*/
+            html{
+                background-color: gray;
+            }
+            .box{
+                background-color: rgba(0,193,255,0.2);
+                border-radius: 8px;
+                text-align: center;
+                font-size: 30px;
+                border-style: solid;
+                border-width: 1px;
+                border-color: black;
+                color: white;
+            }
+            #Question{
+                width: 200px;
+                height: 150px;
+                position: absolute;
+                margin-left: 42%;
+                margin-top: 16%;
+                padding-top: 50px;
+            }
+            #demo{
+                display: none;
+            }
+            #back{
+                display: none;
+            }
+            #box{
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 100px;
+                padding: 5px;
+                text-align: center;
+            }
+        /*button*/
+            button{
+                margin-top: 20px;
+                display: inline-block;
+                padding: 15px 25px;
+                font-size: 14px;
+                cursor: pointer;
+                text-align: center;
+                text-decoration: none;
+                outline: none;
+                color: #fff;
+                background-color: lightskyblue;
+                border: none;
+                border-radius: 15px;
+                box-shadow: 0 9px #999;
+                width: 150px;
+
+            }
+            button:hover {
+                background-color: lightseagreen;
+            }
+
+            button:active {
+                background-color: lightseagreen;
+                box-shadow: 0 5px #666;
+                transform: translateY(4px);
+            }
+            a{
+              text-decoration: none;
+              color: white;
+            }
+        /*input*/
+            .input{
+                width: 50px;
+                height: 35px;
+                font-size: 25px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+
+    <!--toets-->
+        <p id="Question" class="box"></p>
+        <p id="demo" class="box">Oeps! je bent vergeten een cijfer in te vullen.</p>
+
+        <!--promptbox-->
+        <div id="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+
+                    <img src="images/prompt-logo.png" alt="Lekker Leren afbeelding" height="100px">
+                </div>
+
+                <div class="modal-body">
+                    <p id="txtprompt">Type het getal in van de tafel die je wil toetsen:</p>
+                    <p id="txtprompt2"><input type="text" id="input" maxlength="2"></p>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="ftbtn" id="ftbtn">Ok</button>
+
+                </div>
+            </div>
+
+        </div>
+        <script>
+        /***promptbox***/
+        //var
+            var modal = document.getElementById('model');
+            var ftbtn = document.getElementById('ftbtn');
+            var ftbtn2 = document.getElementById('ftbtn2');
+            var z = "";
+
+            //ok button
+            ftbtn.onclick = function() {
+                z = document.getElementById('input').value;
+                check();
+            }
+            function check() {
+                if(z == "") {
+                    document.getElementById('txtprompt').innerHTML = "Oeps! je bent vergeten een cijfer in te vullen.";
+                    z = document.getElementById('input').value;
+                }
+                else {
+                    document.getElementById('modal').style.display = "none";
+                    Question1();
+                }
+            }
+
+        /***toes***/
+        //var
+            var cijfer = 10;
+            var fouten = 0;
+            var a = Math.floor(Math.random() * 10) + 1;
+            var b = Math.floor(Math.random() * 10) + 1;
+            var c = Math.floor(Math.random() * 10) + 1;
+            var d = Math.floor(Math.random() * 10) + 1;
+            var e = Math.floor(Math.random() * 10) + 1;
+            var f = Math.floor(Math.random() * 10) + 1;
+            var g = Math.floor(Math.random() * 10) + 1;
+            var h = Math.floor(Math.random() * 10) + 1;
+            var i = Math.floor(Math.random() * 10) + 1;
+            var j = Math.floor(Math.random() * 10) + 1;
+            var input1 = "";
+            var input2 = "";
+            var input3 = "";
+            var input4 = "";
+            var input5 = "";
+            var input6 = "";
+            var input7 = "";
+            var input8 = "";
+            var input9 = "";
+            var input10 = "";
+
+        //Question
+            function Question1() {
+                document.getElementById("Question").innerHTML = a + " x " + z + ' = <input class="input" type="text" id="1" maxlength="3"><br><button onclick="hold()">Volgende</button>';
+            }
+            function hold(){
+                input1 = document.getElementById("1").value;
+                if(input1 == "") {
+                    document.getElementById("demo").style.display = "block";
+                }
+                else {
+                    document.getElementById("demo").style.display = "none";
+                    Question2();
+                }
+            }
+
+            function Question2(){
+                document.getElementById("Question").innerHTML = b + " x " + z + ' = <input class="input" type="text" id="2" maxlength="3"><br><button onclick="hold2()">Volgende</button>';
+            }
+            function hold2(){
+                input2 = document.getElementById("2").value;
+                if(input2 == "") {
+                    document.getElementById("demo").style.display = "block";
+                }
+                else {
+                    document.getElementById("demo").style.display = "none";
+                    Question3();
+                }
+            }
+
+            function Question3(){
+                document.getElementById("Question").innerHTML = c + " x " + z + ' = <input class="input" type="text" id="3" maxlength="3"><br><button onclick="hold3()">Volgende</button>';
+            }
+            function hold3(){
+                input3 = document.getElementById("3").value;
+                if(input3 == "") {
+                    document.getElementById("demo").style.display = "block";
+                }
+                else {
+                    document.getElementById("demo").style.display = "none";
+                    Question4();
+                }
+            }
+
+            function Question4(){
+                document.getElementById("Question").innerHTML = d + " x " + z + ' = <input class="input" type="text" id="4" maxlength="3"><br><button onclick="hold4()">Volgende</button>';
+            }
+            function hold4(){
+                input4 = document.getElementById("4").value;
+                if(input4 == "") {
+                    document.getElementById("demo").style.display = "block";
+                }
+                else {
+                    document.getElementById("demo").style.display = "none";
+                    Question5();
+                }
+            }
+
+            function Question5(){
+                document.getElementById("Question").innerHTML = e + " x " + z + ' = <input class="input type="text" id="5" maxlength="3"><br><button onclick="hold5()">Volgende</button>';
+            }
+            function hold5(){
+                input5 = document.getElementById("5").value;
+                if(input5 == "") {
+                    document.getElementById("demo").style.display = "block";
+                }
+                else {
+                    document.getElementById("demo").style.display = "none";
+                    Question6();
+                }
+            }
+
+            function Question6(){
+                document.getElementById("Question").innerHTML = f + " x " + z + ' = <input class="input type="text" id="6" maxlength="3"><br><button onclick="hold6()">Volgende</button>';
+            }
+            function hold6(){
+                input6 = document.getElementById("6").value;
+                if(input6 == "") {
+                    document.getElementById("demo").style.display = "block";
+                }
+                else {
+                    document.getElementById("demo").style.display = "none";
+                    Question7();
+                }
+            }
+
+            function Question7(){
+                document.getElementById("Question").innerHTML = g + " x " + z + ' = <input class="input type="text" id="7" maxlength="3"><br><button onclick="hold7()">Volgende</button>';
+            }
+            function hold7(){
+                input7 = document.getElementById("7").value;
+                if(input7 == "") {
+                    document.getElementById("demo").style.display = "block";
+                }
+                else {
+                    document.getElementById("demo").style.display = "none";
+                    Question8();
+                }
+            }
+
+            function Question8(){
+                document.getElementById("Question").innerHTML = h + " x " + z + ' = <input class="input type="text" id="8" maxlength="3"><br><button onclick="hold8()">Volgende</button>';
+            }
+            function hold8(){
+                input8 = document.getElementById("8").value;
+                if(input8 == "") {
+                    document.getElementById("demo").style.display = "block";
+                }
+                else {
+                    document.getElementById("demo").style.display = "none";
+                    Question9();
+                }
+            }
+
+            function Question9(){
+                document.getElementById("Question").innerHTML = i + " x " + z + ' = <input class="input type="text" id="9" maxlength="3"><br><button onclick="hold9()">Volgende</button>';
+            }
+            function hold9(){
+                input9 = document.getElementById("9").value;
+                if(input9 == "") {
+                    document.getElementById("demo").style.display = "block";
+                }
+                else {
+                    document.getElementById("demo").style.display = "none";
+                    Question10();
+                }
+            }
+
+            function Question10(){
+                document.getElementById("Question").innerHTML = j + " x " + z + ' = <input class="input type="text" id="10" maxlength="3"><br><button onclick="hold10()">Klaar</button>';
+            }
+            function hold10(){
+                input10 = document.getElementById("10").value;
+                if(input10 == "") {
+                    document.getElementById("demo").style.display = "block";
+                }
+                else {
+                    document.getElementById("demo").style.display = "none";
+                    Answer();
+                }
+            }
+
+
+        //Answer
+            function Answer() {
+                document.getElementById("Question").id = "box";
+                var text1 = "";
+                if(input1 != a * z) {
+                  text1 += "<br>" + a + " x " + z + " = " + a * z + " jouw antwoord: " + input1;
+                  fouten++;
+                }
+                var text2 = "";
+                if(input2 != b * z) {
+                  text2 += "<br>" + b + " x " + z + " = " + b * z + " jouw antwoord: " + input2;
+                  fouten++;
+                }
+                var text3 = "";
+                if(input3 != c * z) {
+                  text3 += "<br>" + c + " x " + z + " = " + c * z + " jouw antwoord: " + input3;
+                  fouten++;
+                }
+                var text4 = "";
+                if(input4 != d * z) {
+                  text4 += "<br>" + d + " x " + z + " = " + d * z + " jouw antwoord: " + input4;
+                  fouten++;
+                }
+                var text5 = "";
+                if(input5 != e * z) {
+                  text5 += "<br>" + e + " x " + z + " = " + e * z + " jouw antwoord: " + input5;
+                  fouten++;
+                }
+                var text6 = "";
+                if(input6 != f * z) {
+                  text6 += "<br>" + f + " x " + z + " = " + f * z + " jouw antwoord: " + input6;
+                  fouten++;
+                }
+                var text7 = "";
+                if(input7 != g * z) {
+                  text7 += "<br>" + g + " x " + z + " = " + g * z + " jouw antwoord: " + input7;
+                  fouten++;
+                }
+                var text8 = "";
+                if(input8 != h * z) {
+                  text8 += "<br>" + h + " x " + z + " = " + h * z + " jouw antwoord: " + input8;
+                  fouten++;
+                }
+                var text9 = "";
+                if(input9 != i * z) {
+                  text9 += "<br>" + i + " x " + z + " = " + i * z + " jouw antwoord: " + input9;
+                  fouten++;
+                }
+                var text10 = "";
+                if(input1 != j * z) {
+                  text10 += "<br>" + j + " x " + z + " = " + j * z + " jouw antwoord: " + input10;
+                  fouten++;
+                }
+                var Cijfer = (cijfer - fouten);
+                if(Cijfer == 0) {
+                    Cijfer = 1;
+                }
+                var fout = "";
+                if(fouten == 0) {
+                    fout += "Goed gedaan je hebt er 0 fout :)";
+                }
+                else {
+                    fout += "Jammer je hebt er " + fouten + "/10 fout:";
+                }
+                document.getElementById("box").innerHTML = "Je cijfer is een: " + Cijfer + "<br><br>" + fout + "<br>" + text1 + text2 + text3 + text4 + text5 + text6 + text7 + text8 + text9 + text10 + '<br><br><button><a href="home.html">terug</a></button>';
+            }
+        </script>
+    </body>
 </html>
