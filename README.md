@@ -1,4 +1,6 @@
 # lekkerleren
 Website ALA
 
-Miquel is scrummaster.
+Yusa Yusak is scrummaster.
+
+Miquel Muller is sfeermaster.
