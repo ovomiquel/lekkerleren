@@ -1,6 +1,6 @@
 # lekkerleren
 Website ALA
 
-Yusa is scrummaster.
+Miquel is scrummaster
 
-Miquel is sfeermaster
+Bart is lelijk
